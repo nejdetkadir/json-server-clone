@@ -1,5 +1,6 @@
 # JSON SERVER
 Create a server and serve content of your json files in localhost
+![cover](doc/cover.gif)
 
 # Usage
 You can use this command for just serve files with your specific port. You can use without port with this command. Port will be default defined as 5555
