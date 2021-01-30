@@ -1,7 +1,7 @@
 {
   "name": "json-server-clone",
   "version": "1.0.0",
-  "description": "",
+  "description": "Create a server and serve content of your json files in localhost",
   "main": "index.js",
   "scripts": {
     "start": "node ./index.js"

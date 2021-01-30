@@ -2,19 +2,94 @@
 Create a server and serve content of your json files in localhost
 
 # Usage
+You can use this command for just serve files with your specific port. You can use without port with this command. Port will be default defined as 5555
 ```shell
 node index.js <file path> --port=<port>
 ```
+Output:
+```shell
+[
+  { file: '<filename>', url: 'http://localhost:<port>/<filename>' },
+  port: <port>,
+  base_url: 'http://localhost:<port>',
+  server_status: 'online'
+]
+```
+
+If you want to create REST API with zero coding, you can use watch command. Watch command supports only one file but supports specific port 
+```shell
+node index.js --watch <file path> --port=<port>
+```
+Output:
+```shell
+[
+  {
+    description: 'List all <table name> as JSON',
+    url: 'http://localhost:<port>/<table name>'
+  },
+  {
+    description: 'Get single <table name> with id as JSON',
+    url: 'http://localhost:<port>/<table name>/:id'
+  },
+  data_table: '<table name>',
+  port: <port>,
+  base_url: 'http://localhost:<port>',
+  server_status: 'online'
+]
+```
 
 # Examples
-You can use without port with this command. Port will be default defined as 5555
+You can use without port with this command
 ```shell
 node index.js api/data.json
 ```
 
+Output: 
+```shell
+[
+  { file: 'data.json', url: 'http://localhost:5555/data' },
+  port: 5555,
+  base_url: 'http://localhost:5555',
+  server_status: 'online'
+]
+```
+
 You can serve multiple JSON files with this command
 ```shell
-node index.js api/data.json api/foo.json
+node index.js api/foo.json api/bar.json
+```
+
+Output:
+```shell
+[
+  { file: 'foo.json', url: 'http://localhost:5555/foo' },
+  { file: 'bar.json', url: 'http://localhost:5555/bar' },
+  port: 5555,
+  base_url: 'http://localhost:5555',
+  server_status: 'online'
+]
+```
+
+You can serve JSON file like REST API with watch command. 
+```shell
+node index.js --watch api/foo.json
+```
+Output:
+```shell
+[
+  {
+    description: 'List all posts as JSON',
+    url: 'http://localhost:5555/posts'
+  },
+  {
+    description: 'Get single post with id as JSON',
+    url: 'http://localhost:5555/posts/:id'
+  },
+  data_table: 'posts',
+  port: 5555,
+  base_url: 'http://localhost:5555',
+  server_status: 'online'
+]
 ```
 
 # LICENSE
