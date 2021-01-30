@@ -73,7 +73,7 @@ Output:
 
 You can serve JSON file like REST API with watch command. 
 ```sh
-½ node index.js --watch api/foo.json
+$ node index.js --watch api/foo.json
 ```
 Output:
 ```sh
