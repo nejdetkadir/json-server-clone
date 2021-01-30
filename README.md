@@ -4,11 +4,11 @@ Create a server and serve content of your json files in localhost
 
 # Usage
 You can use this command for just serve files with your specific port. You can use without port with this command. Port will be default defined as 5555
-```shell
-node index.js <file path> --port=<port>
+```sh
+$ node index.js <file path> --port=<port>
 ```
 Output:
-```shell
+```sh
 [
   { file: '<filename>', url: 'http://localhost:<port>/<filename>' },
   port: <port>,
@@ -18,11 +18,11 @@ Output:
 ```
 
 If you want to create REST API with zero coding, you can use watch command. Watch command supports only one file but supports specific port 
-```shell
-node index.js --watch <file path> --port=<port>
+```sh
+$ node index.js --watch <file path> --port=<port>
 ```
 Output:
-```shell
+```sh
 [
   {
     description: 'List all <table name> as JSON',
@@ -41,12 +41,12 @@ Output:
 
 # Examples
 You can use without port with this command
-```shell
-node index.js api/data.json
+```sh
+$ node index.js api/data.json
 ```
 
 Output: 
-```shell
+```sh
 [
   { file: 'data.json', url: 'http://localhost:5555/data' },
   port: 5555,
@@ -56,12 +56,12 @@ Output:
 ```
 
 You can serve multiple JSON files with this command
-```shell
-node index.js api/foo.json api/bar.json
+```sh
+$ node index.js api/foo.json api/bar.json
 ```
 
 Output:
-```shell
+```sh
 [
   { file: 'foo.json', url: 'http://localhost:5555/foo' },
   { file: 'bar.json', url: 'http://localhost:5555/bar' },
@@ -72,11 +72,11 @@ Output:
 ```
 
 You can serve JSON file like REST API with watch command. 
-```shell
-node index.js --watch api/foo.json
+```sh
+½ node index.js --watch api/foo.json
 ```
 Output:
-```shell
+```sh
 [
   {
     description: 'List all posts as JSON',
