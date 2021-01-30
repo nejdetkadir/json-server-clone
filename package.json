@@ -1,0 +1,15 @@
+{
+  "name": "json-server-clone",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "keywords": [],
+  "author": "https://github.com/nejdetkadir",
+  "license": "MIT",
+  "dependencies": {
+    "yargs": "^16.2.0"
+  }
+}
